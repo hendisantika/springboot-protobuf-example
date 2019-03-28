@@ -36,6 +36,11 @@ dependencies {
 //task wrapper(type: Wrapper) {
 //    gradleVersion = '2.12'
 //}
+//
+//task cleanProto << {
+//    println 'deleting gen'
+//    delete 'gen'
+//}
 
 protobuf {
     protoc {
