@@ -19,9 +19,28 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
     compile('org.springframework.boot:spring-boot-starter-data-rest')
     compile('com.fasterxml.jackson.core:jackson-databind')
-    compile('com.google.protobuf:protobuf-java:3.4.0')
+    compile('com.google.protobuf:protobuf-java:3.7.1')
     compile('com.googlecode.protobuf-java-format:protobuf-java-format:1.4')
     runtime('com.h2database:h2')
     implementation 'org.springframework.boot:spring-boot-starter'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+eclipse {
+    classpath {
+        containers.remove('org.eclipse.jdt.launching.JRE_CONTAINER')
+        containers 'org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8'
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.12'
+}
+
+protobuf {
+    protoc {
+        // Download from repositories
+        artifact = 'com.google.protobuf:protoc:3.7.1'
+        generatedFilesBaseDir = "$projectDir/src"
+    }
 }
