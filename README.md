@@ -4,13 +4,14 @@
 2. Go to the folder: `cd springboot-protobuf-example`
 
 # Usage
-
+```
 ./gradlew clean bootRun
-
+```
+```
 curl http://localhost:8080/person/json
 curl http://localhost:8080/person/protoBuf
-
-JSON response
+```
+# JSON response
 ```
 {
     "emailAddress": "uzumaki_naruto@konohagakure.co.jp",
