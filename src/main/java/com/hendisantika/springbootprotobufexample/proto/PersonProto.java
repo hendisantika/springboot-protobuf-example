@@ -11,6 +11,19 @@ public final class PersonProto extends
         // @@protoc_insertion_point(message_implements:PersonProto)
         PersonProtoOrBuilder {
   public static final int FIRSTNAME_FIELD_NUMBER = 1;
+
+  // Use PersonProto.newBuilder() to construct.
+  private PersonProto(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    super(builder);
+  }
+
+  private PersonProto() {
+    firstName_ = "";
+    lastName_ = "";
+    emailAddress_ = "";
+    homeAddress_ = "";
+    phoneNumbers_ = java.util.Collections.emptyList();
+  }
   public static final int LASTNAME_FIELD_NUMBER = 2;
   public static final int EMAILADDRESS_FIELD_NUMBER = 3;
   public static final int HOMEADDRESS_FIELD_NUMBER = 4;
@@ -40,19 +53,6 @@ public final class PersonProto extends
   private volatile java.lang.Object homeAddress_;
   private java.util.List<com.hendisantika.springbootprotobufexample.proto.PersonProto.PhoneNumber> phoneNumbers_;
   private byte memoizedIsInitialized = -1;
-
-  // Use PersonProto.newBuilder() to construct.
-  private PersonProto(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-    super(builder);
-  }
-
-  private PersonProto() {
-    firstName_ = "";
-    lastName_ = "";
-    emailAddress_ = "";
-    homeAddress_ = "";
-    phoneNumbers_ = java.util.Collections.emptyList();
-  }
 
   private PersonProto(
           com.google.protobuf.CodedInputStream input,
@@ -186,10 +186,31 @@ public final class PersonProto extends
             .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  /**
+   * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
+   */
+  public java.util.List<com.hendisantika.springbootprotobufexample.proto.PersonProto.PhoneNumber> getPhoneNumbersList() {
+    return phoneNumbers_;
+  }
+
   public static com.hendisantika.springbootprotobufexample.proto.PersonProto parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
             .parseDelimitedWithIOException(PARSER, input);
+  }
+
+  /**
+   * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
+   */
+  public int getPhoneNumbersCount() {
+    return phoneNumbers_.size();
+  }
+
+  /**
+   * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
+   */
+  public com.hendisantika.springbootprotobufexample.proto.PersonProto.PhoneNumber getPhoneNumbers(int index) {
+    return phoneNumbers_.get(index);
   }
 
   public static com.hendisantika.springbootprotobufexample.proto.PersonProto parseDelimitedFrom(
@@ -207,6 +228,16 @@ public final class PersonProto extends
             .parseWithIOException(PARSER, input);
   }
 
+  @java.lang.Override
+  public final boolean isInitialized() {
+    byte isInitialized = memoizedIsInitialized;
+    if (isInitialized == 1) return true;
+    if (isInitialized == 0) return false;
+
+    memoizedIsInitialized = 1;
+    return true;
+  }
+
   public static com.hendisantika.springbootprotobufexample.proto.PersonProto parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -221,6 +252,30 @@ public final class PersonProto extends
 
   public static Builder newBuilder(com.hendisantika.springbootprotobufexample.proto.PersonProto prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public int hashCode() {
+    if (memoizedHashCode != 0) {
+      return memoizedHashCode;
+    }
+    int hash = 41;
+    hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + FIRSTNAME_FIELD_NUMBER;
+    hash = (53 * hash) + getFirstName().hashCode();
+    hash = (37 * hash) + LASTNAME_FIELD_NUMBER;
+    hash = (53 * hash) + getLastName().hashCode();
+    hash = (37 * hash) + EMAILADDRESS_FIELD_NUMBER;
+    hash = (53 * hash) + getEmailAddress().hashCode();
+    hash = (37 * hash) + HOMEADDRESS_FIELD_NUMBER;
+    hash = (53 * hash) + getHomeAddress().hashCode();
+    if (getPhoneNumbersCount() > 0) {
+      hash = (37 * hash) + PHONENUMBERS_FIELD_NUMBER;
+      hash = (53 * hash) + getPhoneNumbersList().hashCode();
+    }
+    hash = (29 * hash) + unknownFields.hashCode();
+    memoizedHashCode = hash;
+    return hash;
   }
 
   public static com.hendisantika.springbootprotobufexample.proto.PersonProto getDefaultInstance() {
@@ -380,13 +435,6 @@ public final class PersonProto extends
   /**
    * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
    */
-  public java.util.List<com.hendisantika.springbootprotobufexample.proto.PersonProto.PhoneNumber> getPhoneNumbersList() {
-    return phoneNumbers_;
-  }
-
-  /**
-   * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
-   */
   public java.util.List<? extends com.hendisantika.springbootprotobufexample.proto.PersonProto.PhoneNumberOrBuilder>
   getPhoneNumbersOrBuilderList() {
     return phoneNumbers_;
@@ -395,33 +443,9 @@ public final class PersonProto extends
   /**
    * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
    */
-  public int getPhoneNumbersCount() {
-    return phoneNumbers_.size();
-  }
-
-  /**
-   * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
-   */
-  public com.hendisantika.springbootprotobufexample.proto.PersonProto.PhoneNumber getPhoneNumbers(int index) {
-    return phoneNumbers_.get(index);
-  }
-
-  /**
-   * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
-   */
   public com.hendisantika.springbootprotobufexample.proto.PersonProto.PhoneNumberOrBuilder getPhoneNumbersOrBuilder(
           int index) {
     return phoneNumbers_.get(index);
-  }
-
-  @java.lang.Override
-  public final boolean isInitialized() {
-    byte isInitialized = memoizedIsInitialized;
-    if (isInitialized == 1) return true;
-    if (isInitialized == 0) return false;
-
-    memoizedIsInitialized = 1;
-    return true;
   }
 
   @java.lang.Override
@@ -496,33 +520,8 @@ public final class PersonProto extends
   }
 
   @java.lang.Override
-  public int hashCode() {
-    if (memoizedHashCode != 0) {
-      return memoizedHashCode;
-    }
-    int hash = 41;
-    hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + FIRSTNAME_FIELD_NUMBER;
-    hash = (53 * hash) + getFirstName().hashCode();
-    hash = (37 * hash) + LASTNAME_FIELD_NUMBER;
-    hash = (53 * hash) + getLastName().hashCode();
-    hash = (37 * hash) + EMAILADDRESS_FIELD_NUMBER;
-    hash = (53 * hash) + getEmailAddress().hashCode();
-    hash = (37 * hash) + HOMEADDRESS_FIELD_NUMBER;
-    hash = (53 * hash) + getHomeAddress().hashCode();
-    if (getPhoneNumbersCount() > 0) {
-      hash = (37 * hash) + PHONENUMBERS_FIELD_NUMBER;
-      hash = (53 * hash) + getPhoneNumbersList().hashCode();
-    }
-    hash = (29 * hash) + unknownFields.hashCode();
-    memoizedHashCode = hash;
-    return hash;
-  }
-
-  @java.lang.Override
   public Builder newBuilderForType() {
-    return newBuilder();
-  }
+    return newBuilder(); }
 
   @java.lang.Override
   public Builder toBuilder() {
@@ -592,7 +591,6 @@ public final class PersonProto extends
     private int areaCode_;
     private int phoneNumber_;
     private byte memoizedIsInitialized = -1;
-
     // Use PhoneNumber.newBuilder() to construct.
     private PhoneNumber(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -600,7 +598,6 @@ public final class PersonProto extends
 
     private PhoneNumber() {
     }
-
     private PhoneNumber(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -856,8 +853,7 @@ public final class PersonProto extends
 
     @java.lang.Override
     public Builder newBuilderForType() {
-      return newBuilder();
-    }
+      return newBuilder(); }
 
     @java.lang.Override
     public Builder toBuilder() {
@@ -890,7 +886,7 @@ public final class PersonProto extends
             // @@protoc_insertion_point(builder_implements:PersonProto.PhoneNumber)
             com.hendisantika.springbootprotobufexample.proto.PersonProto.PhoneNumberOrBuilder {
       private int areaCode_;
-      private int phoneNumber_;
+      private int phoneNumber_ ;
 
       // Construct using com.hendisantika.springbootprotobufexample.proto.PersonProto.PhoneNumber.newBuilder()
       private Builder() {
@@ -1002,7 +998,7 @@ public final class PersonProto extends
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.hendisantika.springbootprotobufexample.proto.PersonProto.PhoneNumber) {
-          return mergeFrom((com.hendisantika.springbootprotobufexample.proto.PersonProto.PhoneNumber) other);
+          return mergeFrom((com.hendisantika.springbootprotobufexample.proto.PersonProto.PhoneNumber)other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -1080,7 +1076,6 @@ public final class PersonProto extends
       public int getPhoneNumber() {
         return phoneNumber_;
       }
-
       /**
        * <code>int32 phoneNumber = 2;</code>
        */
@@ -1090,7 +1085,6 @@ public final class PersonProto extends
         onChanged();
         return this;
       }
-
       /**
        * <code>int32 phoneNumber = 2;</code>
        */
@@ -1100,7 +1094,6 @@ public final class PersonProto extends
         onChanged();
         return this;
       }
-
       @java.lang.Override
       public final Builder setUnknownFields(
               final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1128,45 +1121,19 @@ public final class PersonProto extends
           com.hendisantika.springbootprotobufexample.proto.PersonProtoOrBuilder {
     private int bitField0_;
     private java.lang.Object firstName_ = "";
-    private java.lang.Object lastName_ = "";
-    private java.lang.Object emailAddress_ = "";
-    private java.lang.Object homeAddress_ = "";
-    private java.util.List<com.hendisantika.springbootprotobufexample.proto.PersonProto.PhoneNumber> phoneNumbers_ =
-            java.util.Collections.emptyList();
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.hendisantika.springbootprotobufexample.proto.PersonProto.PhoneNumber, com.hendisantika.springbootprotobufexample.proto.PersonProto.PhoneNumber.Builder, com.hendisantika.springbootprotobufexample.proto.PersonProto.PhoneNumberOrBuilder> phoneNumbersBuilder_;
 
     // Construct using com.hendisantika.springbootprotobufexample.proto.PersonProto.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    public static final com.google.protobuf.Descriptors.Descriptor
-    getDescriptor() {
-      return com.hendisantika.springbootprotobufexample.proto.OuterPersonProto.internal_static_PersonProto_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-    internalGetFieldAccessorTable() {
-      return com.hendisantika.springbootprotobufexample.proto.OuterPersonProto.internal_static_PersonProto_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                      com.hendisantika.springbootprotobufexample.proto.PersonProto.class, com.hendisantika.springbootprotobufexample.proto.PersonProto.Builder.class);
-    }
-
+    private java.lang.Object lastName_ = "";
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
         getPhoneNumbersFieldBuilder();
       }
     }
-
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -1187,11 +1154,7 @@ public final class PersonProto extends
       return this;
     }
 
-    @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-    getDescriptorForType() {
-      return com.hendisantika.springbootprotobufexample.proto.OuterPersonProto.internal_static_PersonProto_descriptor;
-    }
+    private java.lang.Object emailAddress_ = "";
 
     @java.lang.Override
     public com.hendisantika.springbootprotobufexample.proto.PersonProto getDefaultInstanceForType() {
@@ -1235,6 +1198,42 @@ public final class PersonProto extends
       return super.clone();
     }
 
+    private java.lang.Object homeAddress_ = "";
+    private java.util.List<com.hendisantika.springbootprotobufexample.proto.PersonProto.PhoneNumber> phoneNumbers_ =
+            java.util.Collections.emptyList();
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.hendisantika.springbootprotobufexample.proto.PersonProto.PhoneNumber, com.hendisantika.springbootprotobufexample.proto.PersonProto.PhoneNumber.Builder, com.hendisantika.springbootprotobufexample.proto.PersonProto.PhoneNumberOrBuilder> phoneNumbersBuilder_;
+
+    private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+    getDescriptor() {
+      return com.hendisantika.springbootprotobufexample.proto.OuterPersonProto.internal_static_PersonProto_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    internalGetFieldAccessorTable() {
+      return com.hendisantika.springbootprotobufexample.proto.OuterPersonProto.internal_static_PersonProto_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                      com.hendisantika.springbootprotobufexample.proto.PersonProto.class, com.hendisantika.springbootprotobufexample.proto.PersonProto.Builder.class);
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor
+    getDescriptorForType() {
+      return com.hendisantika.springbootprotobufexample.proto.OuterPersonProto.internal_static_PersonProto_descriptor;
+    }
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      return true;
+    }
+
     @java.lang.Override
     public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
@@ -1271,7 +1270,7 @@ public final class PersonProto extends
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.hendisantika.springbootprotobufexample.proto.PersonProto) {
-        return mergeFrom((com.hendisantika.springbootprotobufexample.proto.PersonProto) other);
+        return mergeFrom((com.hendisantika.springbootprotobufexample.proto.PersonProto)other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1328,11 +1327,6 @@ public final class PersonProto extends
     }
 
     @java.lang.Override
-    public final boolean isInitialized() {
-      return true;
-    }
-
-    @java.lang.Override
     public Builder mergeFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1374,7 +1368,7 @@ public final class PersonProto extends
             java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
-      }
+  }
 
       firstName_ = value;
       onChanged();
@@ -1446,7 +1440,7 @@ public final class PersonProto extends
             java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
-      }
+  }
 
       lastName_ = value;
       onChanged();
@@ -1518,7 +1512,7 @@ public final class PersonProto extends
             java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
-      }
+  }
 
       emailAddress_ = value;
       onChanged();
@@ -1590,7 +1584,7 @@ public final class PersonProto extends
             java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
-      }
+  }
 
       homeAddress_ = value;
       onChanged();
@@ -1643,7 +1637,7 @@ public final class PersonProto extends
       if (!((bitField0_ & 0x00000010) != 0)) {
         phoneNumbers_ = new java.util.ArrayList<com.hendisantika.springbootprotobufexample.proto.PersonProto.PhoneNumber>(phoneNumbers_);
         bitField0_ |= 0x00000010;
-      }
+       }
     }
 
     /**
@@ -1656,7 +1650,6 @@ public final class PersonProto extends
         return phoneNumbersBuilder_.getMessageList();
       }
     }
-
     /**
      * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
      */
@@ -1667,7 +1660,6 @@ public final class PersonProto extends
         return phoneNumbersBuilder_.getCount();
       }
     }
-
     /**
      * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
      */
@@ -1696,7 +1688,6 @@ public final class PersonProto extends
       }
       return this;
     }
-
     /**
      * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
      */
@@ -1711,7 +1702,6 @@ public final class PersonProto extends
       }
       return this;
     }
-
     /**
      * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
      */
@@ -1728,7 +1718,6 @@ public final class PersonProto extends
       }
       return this;
     }
-
     /**
      * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
      */
@@ -1746,7 +1735,6 @@ public final class PersonProto extends
       }
       return this;
     }
-
     /**
      * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
      */
@@ -1761,7 +1749,6 @@ public final class PersonProto extends
       }
       return this;
     }
-
     /**
      * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
      */
@@ -1776,7 +1763,6 @@ public final class PersonProto extends
       }
       return this;
     }
-
     /**
      * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
      */
@@ -1792,7 +1778,6 @@ public final class PersonProto extends
       }
       return this;
     }
-
     /**
      * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
      */
@@ -1806,7 +1791,6 @@ public final class PersonProto extends
       }
       return this;
     }
-
     /**
      * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
      */
@@ -1820,7 +1804,6 @@ public final class PersonProto extends
       }
       return this;
     }
-
     /**
      * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
      */
@@ -1828,19 +1811,16 @@ public final class PersonProto extends
             int index) {
       return getPhoneNumbersFieldBuilder().getBuilder(index);
     }
-
     /**
      * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
      */
     public com.hendisantika.springbootprotobufexample.proto.PersonProto.PhoneNumberOrBuilder getPhoneNumbersOrBuilder(
             int index) {
       if (phoneNumbersBuilder_ == null) {
-        return phoneNumbers_.get(index);
-      } else {
+        return phoneNumbers_.get(index);  } else {
         return phoneNumbersBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
      */
@@ -1852,7 +1832,6 @@ public final class PersonProto extends
         return java.util.Collections.unmodifiableList(phoneNumbers_);
       }
     }
-
     /**
      * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
      */
@@ -1860,7 +1839,6 @@ public final class PersonProto extends
       return getPhoneNumbersFieldBuilder().addBuilder(
               com.hendisantika.springbootprotobufexample.proto.PersonProto.PhoneNumber.getDefaultInstance());
     }
-
     /**
      * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
      */
@@ -1869,7 +1847,6 @@ public final class PersonProto extends
       return getPhoneNumbersFieldBuilder().addBuilder(
               index, com.hendisantika.springbootprotobufexample.proto.PersonProto.PhoneNumber.getDefaultInstance());
     }
-
     /**
      * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
      */
@@ -1877,7 +1854,6 @@ public final class PersonProto extends
     getPhoneNumbersBuilderList() {
       return getPhoneNumbersFieldBuilder().getBuilderList();
     }
-
     private com.google.protobuf.RepeatedFieldBuilderV3<
             com.hendisantika.springbootprotobufexample.proto.PersonProto.PhoneNumber, com.hendisantika.springbootprotobufexample.proto.PersonProto.PhoneNumber.Builder, com.hendisantika.springbootprotobufexample.proto.PersonProto.PhoneNumberOrBuilder>
     getPhoneNumbersFieldBuilder() {

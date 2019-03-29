@@ -11,7 +11,6 @@ public interface PersonProtoOrBuilder extends
    * <code>string firstName = 1;</code>
    */
   java.lang.String getFirstName();
-
   /**
    * <code>string firstName = 1;</code>
    */
@@ -22,7 +21,6 @@ public interface PersonProtoOrBuilder extends
    * <code>string lastName = 2;</code>
    */
   java.lang.String getLastName();
-
   /**
    * <code>string lastName = 2;</code>
    */
@@ -33,7 +31,6 @@ public interface PersonProtoOrBuilder extends
    * <code>string emailAddress = 3;</code>
    */
   java.lang.String getEmailAddress();
-
   /**
    * <code>string emailAddress = 3;</code>
    */
@@ -44,7 +41,6 @@ public interface PersonProtoOrBuilder extends
    * <code>string homeAddress = 4;</code>
    */
   java.lang.String getHomeAddress();
-
   /**
    * <code>string homeAddress = 4;</code>
    */
@@ -56,23 +52,19 @@ public interface PersonProtoOrBuilder extends
    */
   java.util.List<com.hendisantika.springbootprotobufexample.proto.PersonProto.PhoneNumber>
   getPhoneNumbersList();
-
   /**
    * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
    */
   com.hendisantika.springbootprotobufexample.proto.PersonProto.PhoneNumber getPhoneNumbers(int index);
-
   /**
    * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
    */
   int getPhoneNumbersCount();
-
   /**
    * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
    */
   java.util.List<? extends com.hendisantika.springbootprotobufexample.proto.PersonProto.PhoneNumberOrBuilder>
   getPhoneNumbersOrBuilderList();
-
   /**
    * <code>repeated .PersonProto.PhoneNumber phoneNumbers = 5;</code>
    */
