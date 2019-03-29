@@ -2,6 +2,7 @@ package com.hendisantika.springbootprotobufexample.controller;
 
 import com.hendisantika.springbootprotobufexample.domain.Person;
 import com.hendisantika.springbootprotobufexample.domain.PhoneNumber;
+import com.hendisantika.springbootprotobufexample.proto.PersonProto;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -31,10 +32,10 @@ public class PersonController {
     public PersonProto getPersonProto() {
         return PersonProto
                 .newBuilder()
-                .setFirstName("Jake")
-                .setLastName("Partusch")
-                .setEmailAddress("jakepartusch@abc.com")
-                .setHomeAddress("123 Seasame Street")
+                .setFirstName("Uchiha")
+                .setLastName("Sasuke")
+                .setEmailAddress("uchiha_sasuke@konohagakure.com")
+                .setHomeAddress("Jln. Konohagakure 212")
                 .addPhoneNumbers(PersonProto.PhoneNumber
                         .newBuilder()
                         .setAreaCode(123)
