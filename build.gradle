@@ -19,7 +19,7 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
     compile('org.springframework.boot:spring-boot-starter-data-rest')
     compile('com.fasterxml.jackson.core:jackson-databind')
-    compile('com.google.protobuf:protobuf-java:4.29.0')
+    compile('com.google.protobuf:protobuf-java:4.29.1')
     compile('com.googlecode.protobuf-java-format:protobuf-java-format:1.4')
     runtime('com.h2database:h2')
     implementation 'org.springframework.boot:spring-boot-starter'
