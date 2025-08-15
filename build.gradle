@@ -19,7 +19,7 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
     compile('org.springframework.boot:spring-boot-starter-data-rest')
     compile('com.fasterxml.jackson.core:jackson-databind')
-    compile('com.google.protobuf:protobuf-java:4.31.1')
+    compile('com.google.protobuf:protobuf-java:4.32.0')
     compile('com.googlecode.protobuf-java-format:protobuf-java-format:1.4')
     runtime('com.h2database:h2')
     implementation 'org.springframework.boot:spring-boot-starter'
@@ -45,7 +45,7 @@ dependencies {
 protobuf {
     protoc {
         // Download from repositories
-        artifact = 'com.google.protobuf:protoc:4.31.1'
+        artifact = 'com.google.protobuf:protoc:4.32.0'
         generatedFilesBaseDir = "$projectDir/src"
     }
 }
