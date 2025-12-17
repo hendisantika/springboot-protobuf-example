@@ -1,7 +1,7 @@
 plugins {
     id 'org.springframework.boot' version '4.0.0'
     id 'java'
-    id "com.google.protobuf" version "0.9.5"
+    id "com.google.protobuf" version "0.9.6"
 }
 
 apply plugin: 'io.spring.dependency-management'
